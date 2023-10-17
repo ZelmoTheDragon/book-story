@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>fr.bookstory</groupId>
+    <artifactId>book-story</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+
+    <name>book-story</name>
+    <description>Parent project for book-story</description>
+    <inceptionYear>2023</inceptionYear>
+    <url>https://github.com/ZelmoTheDragon/book-story</url>
+    <organization>
+        <name>GitHub</name>
+        <url>https://github.com</url>
+    </organization>
+    <licenses>
+        <license>
+            <name>MIT</name>
+            <url>https://opensource.org/licenses/MIT</url>
+            <comments>The MIT License</comments>
+        </license>
+    </licenses>
+
+    <modules>
+        <module>book-story-core</module>
+    </modules>
+
+    <scm>
+        <connection>scm:git:https://github.com/ZelmoTheDragon/book-story.git</connection>
+        <developerConnection>scm:git:https://github.com/ZelmoTheDragon/book-story.git</developerConnection>
+        <tag>HEAD</tag>
+        <url>https://github.com/ZelmoTheDragon/book-story</url>
+    </scm>
+    <issueManagement>
+        <system>Github</system>
+        <url>https://github.com/ZelmoTheDragon/book-story/issues</url>
+    </issueManagement>
+
+    <developers>
+        <developer>
+            <id>ZelmoTheDragon</id>
+            <name>MOSELLE Maxime</name>
+            <email>maximemoselle@gmail.com</email>
+            <organization>GitHub</organization>
+            <organizationUrl>https://github.com</organizationUrl>
+            <timezone>Europe/Paris</timezone>
+            <url>https://github.com/ZelmoTheDragon</url>
+            <roles>
+                <role>developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <properties>
+        <!-- Versions -->
+        <version.maven>3.9.0</version.maven>
+        <version.java>17</version.java>
+
+        <!-- TEST versions -->
+        <version.group.junit>5.10.0</version.group.junit>
+
+        <!-- Maven plugins -->
+        <version.maven-antrun-plugin>3.1.0</version.maven-antrun-plugin>
+        <version.maven-clean-plugin>3.2.0</version.maven-clean-plugin>
+        <version.maven-compiler-plugin>3.11.0</version.maven-compiler-plugin>
+        <version.maven-dependency-plugin>3.6.0</version.maven-dependency-plugin>
+        <version.maven-deploy-plugin>3.1.1</version.maven-deploy-plugin>
+        <version.maven-enforcer-plugin>3.3.0</version.maven-enforcer-plugin>
+        <version.maven-failsafe-plugin>3.1.2</version.maven-failsafe-plugin>
+        <version.maven-install-plugin>3.1.1</version.maven-install-plugin>
+        <version.maven-jar-plugin>3.3.0</version.maven-jar-plugin>
+        <version.maven-javadoc-plugin>3.5.0</version.maven-javadoc-plugin>
+        <version.maven-release-plugin>3.0.0</version.maven-release-plugin>
+        <version.maven-resources-plugin>3.3.1</version.maven-resources-plugin>
+        <version.maven-scm-plugin>2.0.0</version.maven-scm-plugin>
+        <version.maven-site-plugin>3.12.1</version.maven-site-plugin>
+        <version.maven-surefire-plugin>3.1.2</version.maven-surefire-plugin>
+        <version.maven-war-plugin>3.3.2</version.maven-war-plugin>
+
+        <!-- Maven report plugins -->
+        <version.maven-project-info-reports-plugin>3.4.2</version.maven-project-info-reports-plugin>
+        <version.maven-surefire-report-plugin>3.1.2</version.maven-surefire-report-plugin>
+
+        <!-- Externals plugins -->
+        <version.jacoco-maven-plugin>0.8.11</version.jacoco-maven-plugin>
+
+        <!-- Configuration -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.compiler.release>${version.java}</maven.compiler.release>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- TEST -->
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-api</artifactId>
+                <version>${version.group.junit}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-params</artifactId>
+                <version>${version.group.junit}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.junit.jupiter</groupId>
+                <artifactId>junit-jupiter-engine</artifactId>
+                <version>${version.group.junit}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <!-- Maven plugins  -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-antrun-plugin</artifactId>
+                    <version>${version.maven-antrun-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-clean-plugin</artifactId>
+                    <version>${version.maven-clean-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>${version.maven-compiler-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-dependency-plugin</artifactId>
+                    <version>${version.maven-dependency-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-deploy-plugin</artifactId>
+                    <version>${version.maven-deploy-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-enforcer-plugin</artifactId>
+                    <version>${version.maven-enforcer-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-failsafe-plugin</artifactId>
+                    <version>${version.maven-failsafe-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-install-plugin</artifactId>
+                    <version>${version.maven-install-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>${version.maven-jar-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-javadoc-plugin</artifactId>
+                    <version>${version.maven-javadoc-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <version>${version.maven-release-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-resources-plugin</artifactId>
+                    <version>${version.maven-resources-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-scm-plugin</artifactId>
+                    <version>${version.maven-scm-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-site-plugin</artifactId>
+                    <version>${version.maven-site-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>${version.maven-surefire-plugin}</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-war-plugin</artifactId>
+                    <version>${version.maven-war-plugin}</version>
+                </plugin>
+
+                <!-- Externals plugins -->
+                <plugin>
+                    <groupId>org.jacoco</groupId>
+                    <artifactId>jacoco-maven-plugin</artifactId>
+                    <version>${version.jacoco-maven-plugin}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <configuration>
+                    <rules>
+                        <requireJavaVersion>
+                            <version>${version.java}</version>
+                        </requireJavaVersion>
+                        <requireMavenVersion>
+                            <version>${version.maven}</version>
+                        </requireMavenVersion>
+                        <reactorModuleConvergence>
+                            <message>The reactor is not valid</message>
+                            <ignoreModuleDependencies>true</ignoreModuleDependencies>
+                        </reactorModuleConvergence>
+                        <dependencyConvergence>
+                            <excludedScopes>
+                                <scope>runtime</scope>
+                            </excludedScopes>
+                        </dependencyConvergence>
+                        <banDuplicatePomDependencyVersions/>
+                        <banDynamicVersions/>
+                    </rules>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>${version.maven-project-info-reports-plugin}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>${version.maven-javadoc-plugin}</version>
+                <configuration>
+                    <quiet>true</quiet>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>javadoc</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>${version.maven-surefire-report-plugin}</version>
+                <configuration>
+                    <linkXRef>false</linkXRef>
+                </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                        </configuration>
+                    </reportSet>
+                    <reportSet>
+                        <id>modules</id>
+                        <inherited>true</inherited>
+                        <reports>
+                            <report>report</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>false</aggregate>
+                        </configuration>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+        </plugins>
+    </reporting>
+
+</project>
